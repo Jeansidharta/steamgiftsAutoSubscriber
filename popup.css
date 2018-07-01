@@ -1,0 +1,49 @@
+html, body{
+   background-color: gray;
+   text-align: center;
+   font-size: 30px;
+}
+
+#pointsShow{
+   display: inline;
+   text-color: lightblue;
+}
+
+button{
+   background-color: green;
+   font-size: 30px;
+   text-align: center;
+   padding: 0px 0px 0px 0px;
+
+   border-color: black;
+   border-width: 3px;
+   border-radius: 50px;
+
+   display: inline;
+   margin: 5 0 5 0;
+   width: 200;
+
+   transition: transform 0.1s, background-color 0.1s;
+   /*transition-timing-function: linear*/
+
+   text-decoration: none;
+}
+
+button:active, button:focus{
+   outline-style: none;
+}
+
+button:hover{
+   transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+}
+
+#buttonsContainer{
+   text-align: center;
+   width: 220;
+}
+
+#unsubscribe{background-color: salmon;}
+#unsubscribe:active{background-color: red;}
+
+#subscribe{background-color: #9AF9A3;}
+#subscribe:active{background-color: #21E634;}

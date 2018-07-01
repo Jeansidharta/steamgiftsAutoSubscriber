@@ -1,0 +1,43 @@
+{
+   "name": "Steam Gifts auto-subscriber",
+   "manifest_version": 2,
+   "version": "1.0",
+   "description": "this extension has the purpose of automatically subscribe to steam gifts's giveaways",
+
+   "content_scripts": [
+      {
+         "matches": ["*://www.steamgifts.com/*"],
+         "exclude_matches": ["*://www.steamgifts.com/giveaway/*"],
+         "run_at": "document_idle",
+         "js": ["steamGiftsPageStart.js"]
+      },
+      {
+         "matches": ["*://www.steamgifts.com/giveaway/*"],
+         "run_at": "document_end",
+         "js": ["giveawayHandler.js"]
+      }
+   ],
+
+   "background":{
+      "scripts": ["background.js"],
+      "persistent": false
+   },
+
+   "browser_action":{
+      "default_icon": {
+         "16": "Images/16.png",
+         "32": "Images/32.png",
+         "64": "Images/64.png",
+         "128": "Images/128.png"
+      },
+      "default_popup": "popup.html"
+   },
+
+   "permissions": [
+      "tabs",
+      "storage",
+      "alarms",
+      "activeTab",
+      "*://*.steamgifts.com/*"
+   ]
+}
